@@ -1,0 +1,97 @@
+{
+  "profile": {
+    "nickname": "[ZYQX] Faioou",
+    "game": "Counter-Strike 1.6",
+    "country": "Portugal",
+    "initialRating": 1000,
+    "createdAt": "2026-08-21"
+  },
+  "matches": [
+    {
+      "id": "match-001",
+      "playedAt": "2026-08-21T17:30:00+01:00",
+      "map": "de_tuscan",
+      "result": "loss",
+      "ourScore": 5,
+      "opponentScore": 13,
+      "side": "Terrorists",
+      "ratingBefore": 1000,
+      "ratingChange": -25,
+      "ratingAfter": 975,
+      "playerStats": {
+        "kills": 14,
+        "deaths": 15,
+        "assists": null
+      },
+      "scoreboard": {
+        "ourTeam": [
+          {
+            "name": "[ZYQX] Faioou",
+            "kills": 14,
+            "deaths": 15,
+            "isProfilePlayer": true
+          },
+          {
+            "name": "[ZYQX] shr1mpyy",
+            "kills": 12,
+            "deaths": 16,
+            "ping": 43
+          },
+          {
+            "name": "[ZYQX] bernik",
+            "kills": 11,
+            "deaths": 16,
+            "ping": 29
+          },
+          {
+            "name": "[ZYQX] _aced",
+            "kills": 8,
+            "deaths": 17,
+            "ping": 38
+          },
+          {
+            "name": "(1)[ZYQX] -CuriS-",
+            "kills": 7,
+            "deaths": 16,
+            "ping": 27
+          }
+        ],
+        "opponentTeam": [
+          {
+            "name": "CheezyPinoy",
+            "kills": 23,
+            "deaths": 7,
+            "ping": 42
+          },
+          {
+            "name": "RAGE OF THE BOY",
+            "kills": 21,
+            "deaths": 10,
+            "ping": 27
+          },
+          {
+            "name": "pyro`",
+            "kills": 18,
+            "deaths": 8,
+            "ping": 26
+          },
+          {
+            "name": "Slayin",
+            "kills": 18,
+            "deaths": 11,
+            "ping": 36
+          },
+          {
+            "name": "SaVaGe_RuBy",
+            "kills": 12,
+            "deaths": 10,
+            "ping": 35
+          }
+        ]
+      },
+      "screenshot": "/assets/tuscan-scoreboard.png",
+      "notes": "Primeira partida registada. Resultado final indicado: derrota por 13-5.",
+      "playerName": "[ZYQX] Faioou"
+    }
+  ]
+}

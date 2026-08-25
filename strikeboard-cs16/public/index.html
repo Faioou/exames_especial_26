@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111214" />
+  <title>STRIKEBOARD — CS 1.6</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#top" aria-label="STRIKEBOARD">
+        <span class="brand-mark">S</span>
+        <span>STRIKEBOARD</span>
+      </a>
+      <nav class="nav">
+        <a class="nav-item active" href="#overview"><span>◫</span> Visão geral</a>
+        <a class="nav-item" href="#matches"><span>▤</span> Partidas</a>
+        <a class="nav-item" href="#rating"><span>⬡</span> Níveis</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <span class="status-dot"></span>
+        Base de dados local
+      </div>
+    </aside>
+
+    <main class="main" id="top">
+      <header class="topbar">
+        <div class="game-pill"><span class="mini-dot"></span> Counter-Strike 1.6</div>
+        <div class="top-actions">
+          <a class="btn ghost" href="/api/export">Exportar dados</a>
+          <button class="btn primary" id="openMatchModal">+ Registar partida</button>
+        </div>
+      </header>
+
+      <section class="hero" id="overview">
+        <div class="hero-grid"></div>
+        <div class="profile-row">
+          <div class="avatar" id="avatarInitial" aria-hidden="true">C</div>
+          <div class="profile-copy">
+            <div class="eyebrow">PERFIL COMPETITIVO</div>
+            <div class="nickname-line"><h1 id="nickname">[ZYQX] Cuddlesoks</h1><button class="edit-name-btn" id="openProfileModal" type="button" title="Alterar nome">Editar nome</button></div>
+            <div class="profile-meta"><span>🇵🇹 Portugal</span><span>•</span><span>CS 1.6</span><span>•</span><span id="matchCountMeta">1 partida</span></div>
+          </div>
+          <div class="rating-card compact" id="rating">
+            <div class="level-badge"><span id="levelNumber">3</span></div>
+            <div>
+              <div class="muted small">NÍVEL ATUAL</div>
+              <div class="rating-line"><strong id="ratingValue">975</strong> <span>rating</span></div>
+              <div class="level-progress"><div id="levelProgressBar"></div></div>
+              <div class="muted tiny" id="nextLevelText">126 pontos para o nível 4</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-grid" aria-label="Estatísticas">
+        <article class="stat-card"><span class="stat-label">PARTIDAS</span><strong id="statMatches">1</strong><small>total registado</small></article>
+        <article class="stat-card"><span class="stat-label">VITÓRIAS</span><strong id="statWins">0</strong><small id="statWinRate">0% win rate</small></article>
+        <article class="stat-card"><span class="stat-label">K / D</span><strong id="statKD">0.93</strong><small id="statKillsDeaths">14 / 15</small></article>
+        <article class="stat-card"><span class="stat-label">MÉDIA KILLS</span><strong id="statAvgKills">14.0</strong><small>por partida</small></article>
+      </section>
+
+      <section class="content-grid">
+        <div class="panel matches-panel" id="matches">
+          <div class="panel-head">
+            <div>
+              <div class="eyebrow">HISTÓRICO</div>
+              <h2>Partidas registadas</h2>
+            </div>
+            <span class="muted small">mais recente primeiro</span>
+          </div>
+          <div id="matchesList" class="matches-list"></div>
+        </div>
+
+        <aside class="panel rating-panel">
+          <div class="eyebrow">SISTEMA DE RATING</div>
+          <h2>10 níveis</h2>
+          <p class="muted rating-explainer">O perfil começa em <strong>1000</strong> pontos. Neste protótipo, cada vitória vale <strong>+25</strong> e cada derrota <strong>-25</strong>. É um sistema local, simples e transparente.</p>
+          <div id="levelsList" class="levels-list"></div>
+          <div class="info-box">Pode alterar as faixas e a fórmula diretamente no ficheiro <code>server.js</code>.</div>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="profileModal" class="modal small-modal">
+    <form id="profileForm" class="modal-card">
+      <div class="modal-head">
+        <div><div class="eyebrow">PERFIL</div><h2>Alterar nome</h2></div>
+        <button type="button" class="icon-btn" id="closeProfileModal" aria-label="Fechar">×</button>
+      </div>
+      <p class="muted profile-edit-help">Ao alterar o nome, ele também será atualizado em <strong>todas as partidas anteriores</strong>, incluindo os scoreboards guardados.</p>
+      <label class="field full"><span>Nome / nickname</span><input id="profileNicknameInput" name="nickname" maxlength="48" required /></label>
+      <div id="profileMessage" class="form-message" aria-live="polite"></div>
+      <div class="modal-actions"><button type="button" class="btn ghost" id="cancelProfileEdit">Cancelar</button><button class="btn primary" type="submit">Guardar nome</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="matchModal" class="modal">
+    <form id="matchForm" class="modal-card">
+      <div class="modal-head">
+        <div><div class="eyebrow">NOVA PARTIDA</div><h2>Registar resultado</h2></div>
+        <button type="button" class="icon-btn" id="closeMatchModal" aria-label="Fechar">×</button>
+      </div>
+      <div class="form-grid">
+        <label class="field full"><span>Mapa</span><input name="map" placeholder="de_dust2" required /></label>
+        <label class="field"><span>Nosso score</span><input name="ourScore" type="number" min="0" required /></label>
+        <label class="field"><span>Score adversário</span><input name="opponentScore" type="number" min="0" required /></label>
+        <label class="field"><span>Kills</span><input name="kills" type="number" min="0" required /></label>
+        <label class="field"><span>Deaths</span><input name="deaths" type="number" min="0" required /></label>
+        <label class="field"><span>Assists (opcional)</span><input name="assists" type="number" min="0" /></label>
+        <label class="field"><span>Lado</span><select name="side"><option>Terrorists</option><option>Counter-Terrorists</option><option>Mixed</option></select></label>
+        <label class="field full"><span>Notas</span><textarea name="notes" rows="3" placeholder="Ex.: jogo equilibrado, overtime, etc."></textarea></label>
+      </div>
+      <div id="formMessage" class="form-message" aria-live="polite"></div>
+      <div class="modal-actions"><button type="button" class="btn ghost" id="cancelMatch">Cancelar</button><button class="btn primary" type="submit">Guardar partida</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="detailsModal" class="modal wide">
+    <div class="modal-card details-card">
+      <div class="modal-head">
+        <div><div class="eyebrow">DETALHES DA PARTIDA</div><h2 id="detailsTitle">de_tuscan</h2></div>
+        <button type="button" class="icon-btn" id="closeDetailsModal" aria-label="Fechar">×</button>
+      </div>
+      <div id="detailsContent"></div>
+    </div>
+  </dialog>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

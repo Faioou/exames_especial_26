@@ -4,7 +4,8 @@
     "game": "Counter-Strike 1.6",
     "country": "Portugal",
     "initialRating": 1000,
-    "createdAt": "2026-08-21"
+    "createdAt": "2026-08-21",
+    "playerId": "player-profile"
   },
   "matches": [
     {
@@ -29,31 +30,36 @@
             "name": "[ZYQX] Faioou",
             "kills": 14,
             "deaths": 15,
-            "isProfilePlayer": true
+            "isProfilePlayer": true,
+            "playerId": "player-profile"
           },
           {
             "name": "[ZYQX] shr1mpyy",
             "kills": 12,
             "deaths": 16,
-            "ping": 43
+            "ping": 43,
+            "playerId": "player-1787873259156-bdc023"
           },
           {
             "name": "[ZYQX] bernik",
             "kills": 11,
             "deaths": 16,
-            "ping": 29
+            "ping": 29,
+            "playerId": "player-1787873259156-b8faeb"
           },
           {
             "name": "[ZYQX] _aced",
             "kills": 8,
             "deaths": 17,
-            "ping": 38
+            "ping": 38,
+            "playerId": "player-1787873259156-dd1c30"
           },
           {
             "name": "(1)[ZYQX] -CuriS-",
             "kills": 7,
             "deaths": 16,
-            "ping": 27
+            "ping": 27,
+            "playerId": "player-1787873259156-1d0857"
           }
         ],
         "opponentTeam": [
@@ -61,37 +67,274 @@
             "name": "CheezyPinoy",
             "kills": 23,
             "deaths": 7,
-            "ping": 42
+            "ping": 42,
+            "playerId": "player-1787873259156-3e3f6e"
           },
           {
             "name": "RAGE OF THE BOY",
             "kills": 21,
             "deaths": 10,
-            "ping": 27
+            "ping": 27,
+            "playerId": "player-1787873259156-333b7d"
           },
           {
             "name": "pyro`",
             "kills": 18,
             "deaths": 8,
-            "ping": 26
+            "ping": 26,
+            "playerId": "player-1787873259156-52232d"
           },
           {
             "name": "Slayin",
             "kills": 18,
             "deaths": 11,
-            "ping": 36
+            "ping": 36,
+            "playerId": "player-1787873259156-9c27c3"
           },
           {
             "name": "SaVaGe_RuBy",
             "kills": 12,
             "deaths": 10,
-            "ping": 35
+            "ping": 35,
+            "playerId": "player-1787873259157-174b69"
           }
         ]
       },
       "screenshot": "/assets/tuscan-scoreboard.png",
       "notes": "Primeira partida registada. Resultado final indicado: derrota por 13-5.",
-      "playerName": "[ZYQX] Faioou"
+      "playerName": "[ZYQX] Faioou",
+      "ourTeamName": "ZYQX",
+      "opponentTeamName": "ENEMY"
+    },
+    {
+      "id": "match-1787871767212",
+      "playedAt": "2026-08-27T23:02:47.212Z",
+      "map": "de_dust2",
+      "result": "win",
+      "ourScore": 13,
+      "opponentScore": 8,
+      "totalRounds": 21,
+      "side": "Terrorists (T)",
+      "ratingBefore": 975,
+      "ratingChange": 25,
+      "ratingAfter": 1000,
+      "playerName": "[ZYQX] Faioou",
+      "playerStats": {
+        "kills": 15,
+        "deaths": 14,
+        "assists": null
+      },
+      "scoreboard": {
+        "ourTeam": [
+          {
+            "name": "[ZYQX] Faioou",
+            "kills": 15,
+            "deaths": 14,
+            "side": "T",
+            "isProfilePlayer": true,
+            "playerId": "player-profile"
+          },
+          {
+            "name": "[ZYQX] shr1mpyy",
+            "kills": 26,
+            "deaths": 12,
+            "side": "T",
+            "playerId": "player-1787873259156-bdc023"
+          },
+          {
+            "name": "[ZYQX] -CuriS-",
+            "kills": 19,
+            "deaths": 8,
+            "side": "T",
+            "playerId": "player-1787873259157-8470df"
+          },
+          {
+            "name": "[ZYQX] _aced",
+            "kills": 10,
+            "deaths": 15,
+            "side": "T",
+            "playerId": "player-1787873259156-dd1c30"
+          },
+          {
+            "name": "[ZYQX] bernik",
+            "kills": 19,
+            "deaths": 13,
+            "side": "T",
+            "playerId": "player-1787873259156-b8faeb"
+          }
+        ],
+        "opponentTeam": [
+          {
+            "name": "777wrhl",
+            "kills": 20,
+            "deaths": 12,
+            "side": "CT",
+            "playerId": "player-1787873259157-8f1ff2"
+          },
+          {
+            "name": "frosti",
+            "kills": 16,
+            "deaths": 16,
+            "side": "CT",
+            "playerId": "player-1787873259157-4eec9c"
+          },
+          {
+            "name": "Xenil",
+            "kills": 14,
+            "deaths": 18,
+            "side": "CT",
+            "playerId": "player-1787873259157-af6f8d"
+          },
+          {
+            "name": "kukuurydza",
+            "kills": 13,
+            "deaths": 15,
+            "side": "CT",
+            "playerId": "player-1787873259157-796789"
+          },
+          {
+            "name": "Simon_56",
+            "kills": 5,
+            "deaths": 19,
+            "side": "CT",
+            "playerId": "player-1787873259157-5758c0"
+          }
+        ]
+      },
+      "screenshot": null,
+      "notes": "",
+      "ourTeamName": "ZYQX",
+      "opponentTeamName": "ENEMY"
+    }
+  ],
+  "players": [
+    {
+      "id": "player-profile",
+      "username": "[ZYQX] Faioou",
+      "rating": 1000,
+      "friend": false,
+      "isProfilePlayer": true,
+      "createdAt": "2026-08-27T23:27:39.155Z"
+    },
+    {
+      "id": "player-1787873259156-bdc023",
+      "username": "[ZYQX] shr1mpyy",
+      "rating": 997,
+      "friend": true,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-27T23:27:39.156Z"
+    },
+    {
+      "id": "player-1787873259156-b8faeb",
+      "username": "[ZYQX] bernik",
+      "rating": 1041,
+      "friend": true,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-27T23:27:39.156Z"
+    },
+    {
+      "id": "player-1787873259156-dd1c30",
+      "username": "[ZYQX] _aced",
+      "rating": 942,
+      "friend": true,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-27T23:27:39.156Z"
+    },
+    {
+      "id": "player-1787873259156-1d0857",
+      "username": "(1)[ZYQX] -CuriS-",
+      "rating": 1033,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-27T23:27:39.156Z"
+    },
+    {
+      "id": "player-1787873259156-3e3f6e",
+      "username": "CheezyPinoy",
+      "rating": 1053,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-27T23:27:39.156Z"
+    },
+    {
+      "id": "player-1787873259156-333b7d",
+      "username": "RAGE OF THE BOY",
+      "rating": 1046,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-27T23:27:39.156Z"
+    },
+    {
+      "id": "player-1787873259156-52232d",
+      "username": "pyro`",
+      "rating": 1015,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-27T23:27:39.156Z"
+    },
+    {
+      "id": "player-1787873259156-9c27c3",
+      "username": "Slayin",
+      "rating": 963,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-27T23:27:39.157Z"
+    },
+    {
+      "id": "player-1787873259157-174b69",
+      "username": "SaVaGe_RuBy",
+      "rating": 973,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-27T23:27:39.157Z"
+    },
+    {
+      "id": "player-1787873259157-8470df",
+      "username": "[ZYQX] -CuriS-",
+      "rating": 949,
+      "friend": true,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-27T23:27:39.157Z"
+    },
+    {
+      "id": "player-1787873259157-8f1ff2",
+      "username": "777wrhl",
+      "rating": 920,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-27T23:27:39.157Z"
+    },
+    {
+      "id": "player-1787873259157-4eec9c",
+      "username": "frosti",
+      "rating": 1049,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-27T23:27:39.157Z"
+    },
+    {
+      "id": "player-1787873259157-af6f8d",
+      "username": "Xenil",
+      "rating": 948,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-27T23:27:39.157Z"
+    },
+    {
+      "id": "player-1787873259157-796789",
+      "username": "kukuurydza",
+      "rating": 964,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-27T23:27:39.157Z"
+    },
+    {
+      "id": "player-1787873259157-5758c0",
+      "username": "Simon_56",
+      "rating": 1024,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-27T23:27:39.157Z"
     }
   ]
 }

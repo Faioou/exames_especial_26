@@ -17,6 +17,7 @@
       <nav class="nav">
         <a class="nav-item active" href="#overview"><span>◫</span> Visão geral</a>
         <a class="nav-item" href="#matches"><span>▤</span> Partidas</a>
+        <a class="nav-item" href="#friends"><span>♟</span> Amigos</a>
         <a class="nav-item" href="#rating"><span>⬡</span> Níveis</a>
       </nav>
       <div class="sidebar-bottom">
@@ -30,6 +31,7 @@
         <div class="game-pill"><span class="mini-dot"></span> Counter-Strike 1.6</div>
         <div class="top-actions">
           <a class="btn ghost" href="/api/export">Exportar dados</a>
+          <button class="btn ghost" id="openPlayerModal">+ Criar jogador</button>
           <button class="btn primary" id="openMatchModal">+ Registar partida</button>
         </div>
       </header>
@@ -40,46 +42,66 @@
           <div class="avatar" id="avatarInitial" aria-hidden="true">C</div>
           <div class="profile-copy">
             <div class="eyebrow">PERFIL COMPETITIVO</div>
-            <div class="nickname-line"><h1 id="nickname">[ZYQX] Cuddlesoks</h1><button class="edit-name-btn" id="openProfileModal" type="button" title="Alterar nome">Editar nome</button></div>
-            <div class="profile-meta"><span>🇵🇹 Portugal</span><span>•</span><span>CS 1.6</span><span>•</span><span id="matchCountMeta">1 partida</span></div>
+            <div class="nickname-line"><h1 id="nickname">[ZYQX] Cuddlesoks</h1><button class="edit-name-btn" id="openProfileModal" type="button">Editar nome</button></div>
+            <div class="profile-meta"><span>🇵🇹 Portugal</span><span>•</span><span>CS 1.6</span><span>•</span><span id="matchCountMeta">0 partidas</span></div>
           </div>
           <div class="rating-card compact" id="rating">
             <div class="level-badge"><span id="levelNumber">3</span></div>
             <div>
               <div class="muted small">NÍVEL ATUAL</div>
-              <div class="rating-line"><strong id="ratingValue">975</strong> <span>rating</span></div>
+              <div class="rating-line"><strong id="ratingValue">1000</strong> <span>rating</span></div>
               <div class="level-progress"><div id="levelProgressBar"></div></div>
-              <div class="muted tiny" id="nextLevelText">126 pontos para o nível 4</div>
+              <div class="muted tiny" id="nextLevelText"></div>
             </div>
           </div>
         </div>
       </section>
 
       <section class="stats-grid" aria-label="Estatísticas">
-        <article class="stat-card"><span class="stat-label">PARTIDAS</span><strong id="statMatches">1</strong><small>total registado</small></article>
+        <article class="stat-card"><span class="stat-label">PARTIDAS</span><strong id="statMatches">0</strong><small>total registado</small></article>
         <article class="stat-card"><span class="stat-label">VITÓRIAS</span><strong id="statWins">0</strong><small id="statWinRate">0% win rate</small></article>
-        <article class="stat-card"><span class="stat-label">K / D</span><strong id="statKD">0.93</strong><small id="statKillsDeaths">14 / 15</small></article>
-        <article class="stat-card"><span class="stat-label">MÉDIA KILLS</span><strong id="statAvgKills">14.0</strong><small>por partida</small></article>
+        <article class="stat-card"><span class="stat-label">K / D</span><strong id="statKD">0.00</strong><small id="statKillsDeaths">0 / 0</small></article>
+        <article class="stat-card"><span class="stat-label">MÉDIA KILLS</span><strong id="statAvgKills">0.0</strong><small>por partida</small></article>
       </section>
 
-      <section class="content-grid">
-        <div class="panel matches-panel" id="matches">
+      <section class="panel matches-panel" id="matches">
+        <div class="panel-head">
+          <div>
+            <div class="eyebrow">MATCH HISTORY</div>
+            <h2>Partidas registadas</h2>
+          </div>
+          <span class="muted small">K/D ↓ · clica numa partida para abrir</span>
+        </div>
+        <div id="matchesList" class="matches-list"></div>
+      </section>
+
+      <section class="lower-grid">
+        <div class="panel friends-panel" id="friends">
           <div class="panel-head">
             <div>
-              <div class="eyebrow">HISTÓRICO</div>
-              <h2>Partidas registadas</h2>
+              <div class="eyebrow">SOCIAL</div>
+              <h2>Amigos</h2>
+              <p class="muted panel-copy">Os jogadores encontrados nas partidas ficam registados automaticamente. Podes adicioná-los aos amigos e ver o rank de cada um.</p>
             </div>
-            <span class="muted small">mais recente primeiro</span>
+            <button class="btn ghost" id="openPlayerModalFriends">+ Criar jogador</button>
           </div>
-          <div id="matchesList" class="matches-list"></div>
+
+          <div class="rank-table-head"><span>Player</span><span>Rank</span><span></span></div>
+          <div id="friendsList" class="player-rank-list"></div>
+
+          <div class="known-head">
+            <div><div class="eyebrow">BASE DE JOGADORES</div><h3>Jogadores conhecidos</h3></div>
+            <span class="muted small" id="knownPlayersCount">0 jogadores</span>
+          </div>
+          <div id="playersList" class="known-players-list"></div>
         </div>
 
         <aside class="panel rating-panel">
           <div class="eyebrow">SISTEMA DE RATING</div>
           <h2>10 níveis</h2>
-          <p class="muted rating-explainer">O perfil começa em <strong>1000</strong> pontos. Neste protótipo, cada vitória vale <strong>+25</strong> e cada derrota <strong>-25</strong>. É um sistema local, simples e transparente.</p>
+          <p class="muted rating-explainer">O teu perfil mantém o sistema de <strong>10 níveis</strong>. Jogadores novos encontrados numa partida são criados automaticamente com um rating aleatório muito próximo do teu, para as equipas não parecerem desequilibradas.</p>
           <div id="levelsList" class="levels-list"></div>
-          <div class="info-box">Pode alterar as faixas e a fórmula diretamente no ficheiro <code>server.js</code>.</div>
+          <div class="info-box">Tudo é guardado no teu <code>data/database.json</code>: partidas, jogadores, ranks e amigos.</div>
         </aside>
       </section>
     </main>
@@ -91,29 +113,80 @@
         <div><div class="eyebrow">PERFIL</div><h2>Alterar nome</h2></div>
         <button type="button" class="icon-btn" id="closeProfileModal" aria-label="Fechar">×</button>
       </div>
-      <p class="muted profile-edit-help">Ao alterar o nome, ele também será atualizado em <strong>todas as partidas anteriores</strong>, incluindo os scoreboards guardados.</p>
+      <p class="muted profile-edit-help">Ao alterar o nome, ele também é atualizado nas partidas e scoreboards anteriores.</p>
       <label class="field full"><span>Nome / nickname</span><input id="profileNicknameInput" name="nickname" maxlength="48" required /></label>
       <div id="profileMessage" class="form-message" aria-live="polite"></div>
       <div class="modal-actions"><button type="button" class="btn ghost" id="cancelProfileEdit">Cancelar</button><button class="btn primary" type="submit">Guardar nome</button></div>
     </form>
   </dialog>
 
-  <dialog id="matchModal" class="modal">
+  <dialog id="playerModal" class="modal small-modal">
+    <form id="playerForm" class="modal-card">
+      <div class="modal-head">
+        <div><div class="eyebrow">JOGADOR</div><h2 id="playerModalTitle">Criar jogador</h2></div>
+        <button type="button" class="icon-btn" id="closePlayerModal" aria-label="Fechar">×</button>
+      </div>
+      <input type="hidden" id="playerIdInput" />
+      <div class="form-grid">
+        <label class="field full"><span>Username</span><input id="playerUsernameInput" maxlength="48" placeholder="Ex.: shr1mpyy" required /></label>
+        <label class="field full"><span>Rating</span><input id="playerRatingInput" type="number" min="0" max="9999" step="1" placeholder="1000" required /></label>
+        <div class="rank-preview full"><span class="level-ring" id="playerLevelPreview">3</span><div><b id="playerRatingPreview">1000</b><span>rating · nível calculado automaticamente</span></div></div>
+        <label class="friend-check full"><input id="playerFriendInput" type="checkbox" /><span>Adicionar aos meus amigos</span></label>
+      </div>
+      <div id="playerMessage" class="form-message" aria-live="polite"></div>
+      <div class="modal-actions"><button type="button" class="btn ghost" id="cancelPlayerEdit">Cancelar</button><button class="btn primary" type="submit" id="savePlayerButton">Criar jogador</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="matchModal" class="modal match-entry-modal">
     <form id="matchForm" class="modal-card">
       <div class="modal-head">
-        <div><div class="eyebrow">NOVA PARTIDA</div><h2>Registar resultado</h2></div>
+        <div>
+          <div class="eyebrow">NOVA PARTIDA</div>
+          <h2>Registar os 10 jogadores</h2>
+          <p class="muted modal-subtitle">Se um username já existir, a partida fica ligada à conta existente. Se não existir, o STRIKEBOARD cria a conta automaticamente com um rank próximo do teu.</p>
+        </div>
         <button type="button" class="icon-btn" id="closeMatchModal" aria-label="Fechar">×</button>
       </div>
-      <div class="form-grid">
-        <label class="field full"><span>Mapa</span><input name="map" placeholder="de_dust2" required /></label>
-        <label class="field"><span>Nosso score</span><input name="ourScore" type="number" min="0" required /></label>
-        <label class="field"><span>Score adversário</span><input name="opponentScore" type="number" min="0" required /></label>
-        <label class="field"><span>Kills</span><input name="kills" type="number" min="0" required /></label>
-        <label class="field"><span>Deaths</span><input name="deaths" type="number" min="0" required /></label>
-        <label class="field"><span>Assists (opcional)</span><input name="assists" type="number" min="0" /></label>
-        <label class="field"><span>Lado</span><select name="side"><option>Terrorists</option><option>Counter-Terrorists</option><option>Mixed</option></select></label>
-        <label class="field full"><span>Notas</span><textarea name="notes" rows="3" placeholder="Ex.: jogo equilibrado, overtime, etc."></textarea></label>
+
+      <div class="match-basics">
+        <label class="field map-field">
+          <span>Mapa</span>
+          <select name="map" id="mapSelect" required>
+            <option value="" selected disabled>Escolher mapa…</option>
+            <option value="de_dust2">de_dust2 ⭐</option>
+            <option value="de_inferno">de_inferno ⭐</option>
+            <option value="de_nuke">de_nuke ⭐</option>
+            <option value="de_train">de_train ⭐</option>
+            <option value="de_tuscan">de_tuscan ⭐</option>
+            <option value="de_mirage">de_mirage ⭐</option>
+          </select>
+        </label>
+        <label class="field score-field"><span>Tua equipa</span><input name="ourScore" type="number" min="0" max="99" placeholder="13" required /></label>
+        <div class="score-dash">—</div>
+        <label class="field score-field"><span>Adversário</span><input name="opponentScore" type="number" min="0" max="99" placeholder="8" required /></label>
       </div>
+
+      <div class="team-names-grid">
+        <label class="field"><span>Nome da tua equipa</span><input name="ourTeamName" id="ourTeamName" maxlength="40" value="ZYQX" required /></label>
+        <label class="field"><span>Nome da equipa adversária</span><input name="opponentTeamName" id="opponentTeamName" maxlength="40" value="ENEMY" required /></label>
+      </div>
+
+      <div class="team-entry-grid">
+        <section class="team-entry-card our-team-card">
+          <div class="team-entry-head"><div><span class="team-kicker">A TUA EQUIPA</span><h3 id="ourTeamPreview">ZYQX</h3></div><span class="team-count">5 jogadores</span></div>
+          <div class="player-table-head our-player-grid"><span>EU</span><span>JOGADOR</span><span>KILLS</span><span>DEATHS</span></div>
+          <div id="ourPlayersRows" class="player-rows"></div>
+        </section>
+
+        <section class="team-entry-card enemy-team-card">
+          <div class="team-entry-head"><div><span class="team-kicker">ADVERSÁRIOS</span><h3 id="opponentTeamPreview">ENEMY</h3></div><span class="team-count">5 jogadores</span></div>
+          <div class="player-table-head enemy-player-grid"><span>JOGADOR</span><span>KILLS</span><span>DEATHS</span></div>
+          <div id="enemyPlayersRows" class="player-rows"></div>
+        </section>
+      </div>
+
+      <label class="field full notes-field"><span>Notas (opcional)</span><textarea name="notes" rows="2" maxlength="500"></textarea></label>
       <div id="formMessage" class="form-message" aria-live="polite"></div>
       <div class="modal-actions"><button type="button" class="btn ghost" id="cancelMatch">Cancelar</button><button class="btn primary" type="submit">Guardar partida</button></div>
     </form>

@@ -7,6 +7,7 @@
 | Gramática e a sua caracterização | 2022 EN  | N/S  | 2, 11_b |
 | Autómato Finito | 2022 EN  | N/S  | 8_a |
 | Expressão Regular | 2022 EN  | N/S  | 6,7 |
+| Caracteres alfanuméricos | 2022 EN  | N/S  | 7 |
 | Minimizar autómato com o método formal | 2022 EN  | N/S  | 8_b |
 | Autómato para Expressão Regular | 2022 EN  | N/S  | 8_c |
 | Expressão Regular para Gramática | 2022 EN  | N/S  | 9 |
@@ -33,7 +34,10 @@
 | Tabela de símbolos  | 2026 ER  | 0  | 7 |
 | Máquina de Turing e δ (regras de Turing)  | 2026 ER  | 0  | 8 |
 | Sistema de tipos  | 2026 ER  | 0  | 10 |
-
+| Leitura de uma expressão de uma linguagem  | 2026 ER  | 1  | 1_a |
+| Letras maiúsculas vs Caracteres alfanuméricos maiúsculos| 2026 ER  | 1  | 1c |
+| Definição formal de um autómato | 2026 ER  | 2  | 2b |
+| Construção de um autómato | 2026 ER  | 2  | 2a |
 
 
 

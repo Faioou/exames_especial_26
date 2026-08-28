@@ -1,6 +1,6 @@
 {
   "profile": {
-    "nickname": "[ZYQX] Faioou",
+    "nickname": "Faioou",
     "game": "Counter-Strike 1.6",
     "country": "Portugal",
     "initialRating": 1000,
@@ -27,35 +27,35 @@
       "scoreboard": {
         "ourTeam": [
           {
-            "name": "[ZYQX] Faioou",
+            "name": "Faioou",
             "kills": 14,
             "deaths": 15,
             "isProfilePlayer": true,
             "playerId": "player-profile"
           },
           {
-            "name": "[ZYQX] shr1mpyy",
+            "name": "shr1mpyy",
             "kills": 12,
             "deaths": 16,
             "ping": 43,
             "playerId": "player-1787873259156-bdc023"
           },
           {
-            "name": "[ZYQX] bernik",
+            "name": "bernik",
             "kills": 11,
             "deaths": 16,
             "ping": 29,
             "playerId": "player-1787873259156-b8faeb"
           },
           {
-            "name": "[ZYQX] _aced",
+            "name": "_aced",
             "kills": 8,
             "deaths": 17,
             "ping": 38,
             "playerId": "player-1787873259156-dd1c30"
           },
           {
-            "name": "(1)[ZYQX] -CuriS-",
+            "name": "-bubi",
             "kills": 7,
             "deaths": 16,
             "ping": 27,
@@ -102,7 +102,7 @@
       },
       "screenshot": "/assets/tuscan-scoreboard.png",
       "notes": "Primeira partida registada. Resultado final indicado: derrota por 13-5.",
-      "playerName": "[ZYQX] Faioou",
+      "playerName": "Faioou",
       "ourTeamName": "ZYQX",
       "opponentTeamName": "ENEMY"
     },
@@ -118,7 +118,7 @@
       "ratingBefore": 975,
       "ratingChange": 25,
       "ratingAfter": 1000,
-      "playerName": "[ZYQX] Faioou",
+      "playerName": "Faioou",
       "playerStats": {
         "kills": 15,
         "deaths": 14,
@@ -127,7 +127,7 @@
       "scoreboard": {
         "ourTeam": [
           {
-            "name": "[ZYQX] Faioou",
+            "name": "Faioou",
             "kills": 15,
             "deaths": 14,
             "side": "T",
@@ -135,28 +135,28 @@
             "playerId": "player-profile"
           },
           {
-            "name": "[ZYQX] shr1mpyy",
+            "name": "shr1mpyy",
             "kills": 26,
             "deaths": 12,
             "side": "T",
             "playerId": "player-1787873259156-bdc023"
           },
           {
-            "name": "[ZYQX] -CuriS-",
+            "name": "-CuriS-",
             "kills": 19,
             "deaths": 8,
             "side": "T",
             "playerId": "player-1787873259157-8470df"
           },
           {
-            "name": "[ZYQX] _aced",
+            "name": "_aced",
             "kills": 10,
             "deaths": 15,
             "side": "T",
             "playerId": "player-1787873259156-dd1c30"
           },
           {
-            "name": "[ZYQX] bernik",
+            "name": "bernik",
             "kills": 19,
             "deaths": 13,
             "side": "T",
@@ -210,43 +210,53 @@
   "players": [
     {
       "id": "player-profile",
-      "username": "[ZYQX] Faioou",
+      "username": "Faioou",
       "rating": 1000,
       "friend": false,
       "isProfilePlayer": true,
-      "createdAt": "2026-08-27T23:27:39.155Z"
+      "createdAt": "2026-08-27T23:27:39.155Z",
+      "teamId": "team-1787955926413-0a8398",
+      "avatarUrl": "/uploads/players/player-profile.png?v=1787958629280"
     },
     {
       "id": "player-1787873259156-bdc023",
-      "username": "[ZYQX] shr1mpyy",
+      "username": "shr1mpyy",
       "rating": 997,
       "friend": true,
       "isProfilePlayer": false,
-      "createdAt": "2026-08-27T23:27:39.156Z"
+      "createdAt": "2026-08-27T23:27:39.156Z",
+      "teamId": "team-1787955926413-0a8398",
+      "avatarUrl": "/uploads/players/player-1787873259156-bdc023.png?v=1787958555546"
     },
     {
       "id": "player-1787873259156-b8faeb",
-      "username": "[ZYQX] bernik",
+      "username": "bernik",
       "rating": 1041,
       "friend": true,
       "isProfilePlayer": false,
-      "createdAt": "2026-08-27T23:27:39.156Z"
+      "createdAt": "2026-08-27T23:27:39.156Z",
+      "teamId": "team-1787955926413-0a8398",
+      "avatarUrl": "/uploads/players/player-1787873259156-b8faeb.png?v=1787958543927"
     },
     {
       "id": "player-1787873259156-dd1c30",
-      "username": "[ZYQX] _aced",
+      "username": "_aced",
       "rating": 942,
       "friend": true,
       "isProfilePlayer": false,
-      "createdAt": "2026-08-27T23:27:39.156Z"
+      "createdAt": "2026-08-27T23:27:39.156Z",
+      "teamId": "team-1787955926413-0a8398",
+      "avatarUrl": "/uploads/players/player-1787873259156-dd1c30.png?v=1787958567291"
     },
     {
       "id": "player-1787873259156-1d0857",
-      "username": "(1)[ZYQX] -CuriS-",
+      "username": "-bubi",
       "rating": 1033,
-      "friend": false,
+      "friend": true,
       "isProfilePlayer": false,
-      "createdAt": "2026-08-27T23:27:39.156Z"
+      "createdAt": "2026-08-27T23:27:39.156Z",
+      "teamId": "team-1787955926413-0a8398",
+      "avatarUrl": "/uploads/players/player-1787873259156-1d0857.png?v=1787958549993"
     },
     {
       "id": "player-1787873259156-3e3f6e",
@@ -254,7 +264,9 @@
       "rating": 1053,
       "friend": false,
       "isProfilePlayer": false,
-      "createdAt": "2026-08-27T23:27:39.156Z"
+      "createdAt": "2026-08-27T23:27:39.156Z",
+      "teamId": null,
+      "avatarUrl": null
     },
     {
       "id": "player-1787873259156-333b7d",
@@ -262,7 +274,9 @@
       "rating": 1046,
       "friend": false,
       "isProfilePlayer": false,
-      "createdAt": "2026-08-27T23:27:39.156Z"
+      "createdAt": "2026-08-27T23:27:39.156Z",
+      "teamId": null,
+      "avatarUrl": null
     },
     {
       "id": "player-1787873259156-52232d",
@@ -270,7 +284,9 @@
       "rating": 1015,
       "friend": false,
       "isProfilePlayer": false,
-      "createdAt": "2026-08-27T23:27:39.156Z"
+      "createdAt": "2026-08-27T23:27:39.156Z",
+      "teamId": null,
+      "avatarUrl": null
     },
     {
       "id": "player-1787873259156-9c27c3",
@@ -278,7 +294,9 @@
       "rating": 963,
       "friend": false,
       "isProfilePlayer": false,
-      "createdAt": "2026-08-27T23:27:39.157Z"
+      "createdAt": "2026-08-27T23:27:39.157Z",
+      "teamId": null,
+      "avatarUrl": null
     },
     {
       "id": "player-1787873259157-174b69",
@@ -286,15 +304,19 @@
       "rating": 973,
       "friend": false,
       "isProfilePlayer": false,
-      "createdAt": "2026-08-27T23:27:39.157Z"
+      "createdAt": "2026-08-27T23:27:39.157Z",
+      "teamId": null,
+      "avatarUrl": null
     },
     {
       "id": "player-1787873259157-8470df",
-      "username": "[ZYQX] -CuriS-",
+      "username": "-CuriS-",
       "rating": 949,
       "friend": true,
       "isProfilePlayer": false,
-      "createdAt": "2026-08-27T23:27:39.157Z"
+      "createdAt": "2026-08-27T23:27:39.157Z",
+      "teamId": "team-1787955926413-0a8398",
+      "avatarUrl": "/uploads/players/player-1787873259157-8470df.png?v=1787958561922"
     },
     {
       "id": "player-1787873259157-8f1ff2",
@@ -302,7 +324,9 @@
       "rating": 920,
       "friend": false,
       "isProfilePlayer": false,
-      "createdAt": "2026-08-27T23:27:39.157Z"
+      "createdAt": "2026-08-27T23:27:39.157Z",
+      "teamId": null,
+      "avatarUrl": null
     },
     {
       "id": "player-1787873259157-4eec9c",
@@ -310,7 +334,9 @@
       "rating": 1049,
       "friend": false,
       "isProfilePlayer": false,
-      "createdAt": "2026-08-27T23:27:39.157Z"
+      "createdAt": "2026-08-27T23:27:39.157Z",
+      "teamId": null,
+      "avatarUrl": null
     },
     {
       "id": "player-1787873259157-af6f8d",
@@ -318,7 +344,9 @@
       "rating": 948,
       "friend": false,
       "isProfilePlayer": false,
-      "createdAt": "2026-08-27T23:27:39.157Z"
+      "createdAt": "2026-08-27T23:27:39.157Z",
+      "teamId": null,
+      "avatarUrl": null
     },
     {
       "id": "player-1787873259157-796789",
@@ -326,7 +354,9 @@
       "rating": 964,
       "friend": false,
       "isProfilePlayer": false,
-      "createdAt": "2026-08-27T23:27:39.157Z"
+      "createdAt": "2026-08-27T23:27:39.157Z",
+      "teamId": null,
+      "avatarUrl": null
     },
     {
       "id": "player-1787873259157-5758c0",
@@ -334,7 +364,192 @@
       "rating": 1024,
       "friend": false,
       "isProfilePlayer": false,
-      "createdAt": "2026-08-27T23:27:39.157Z"
+      "createdAt": "2026-08-27T23:27:39.157Z",
+      "teamId": null,
+      "avatarUrl": null
+    },
+    {
+      "id": "player-1787879807189-60da7a",
+      "username": "OneTap7",
+      "rating": 776,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-28T01:16:47.189Z",
+      "teamId": "team-1787956091351-6e02ee",
+      "avatarUrl": "/uploads/players/player-1787879807189-60da7a.png?v=1787956761073"
+    },
+    {
+      "id": "player-1787879856686-b8af8a",
+      "username": "LKS691",
+      "rating": 758,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-28T01:17:36.686Z",
+      "teamId": "team-1787956091351-6e02ee",
+      "avatarUrl": "/uploads/players/player-1787879856686-b8af8a.png?v=1787958582053"
+    },
+    {
+      "id": "player-1787880460581-ff1ead",
+      "username": "americanu29",
+      "rating": 595,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-28T01:27:40.582Z",
+      "teamId": "team-1787956091351-6e02ee",
+      "avatarUrl": "/uploads/players/player-1787880460581-ff1ead.png?v=1787958598397"
+    },
+    {
+      "id": "player-1787880525699-1f3947",
+      "username": "EDDY_COX",
+      "rating": 630,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-28T01:28:45.699Z",
+      "teamId": "team-1787956091351-6e02ee",
+      "avatarUrl": "/uploads/players/player-1787880525699-1f3947.png?v=1787958593204"
+    },
+    {
+      "id": "player-1787880626103-7c9eaf",
+      "username": "giulyah",
+      "rating": 664,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-28T01:30:26.103Z",
+      "teamId": "team-1787956091351-6e02ee",
+      "avatarUrl": "/uploads/players/player-1787880626103-7c9eaf.png?v=1787958587839"
+    },
+    {
+      "id": "player-1787953892609-ecd1c7",
+      "username": "newssssasd",
+      "rating": 4621,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-28T21:51:32.613Z",
+      "teamId": null,
+      "avatarUrl": "/uploads/players/player-1787953892609-ecd1c7.png?v=1787956032267"
+    },
+    {
+      "id": "player-1787953926250-beb3d2",
+      "username": "chitka~",
+      "rating": 4550,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-28T21:52:06.251Z",
+      "teamId": null,
+      "avatarUrl": "/uploads/players/player-1787953926250-beb3d2.png?v=1787956482379"
+    },
+    {
+      "id": "player-1787953958721-9e4842",
+      "username": "Last Christmas",
+      "rating": 4421,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-28T21:52:38.722Z",
+      "teamId": null,
+      "avatarUrl": "/uploads/players/player-1787953958721-9e4842.png?v=1787956532618"
+    },
+    {
+      "id": "player-1787953992378-af4bc8",
+      "username": "shoha`",
+      "rating": 4385,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-28T21:53:12.378Z",
+      "teamId": null,
+      "avatarUrl": "/uploads/players/player-1787953992378-af4bc8.png?v=1787956552048"
+    },
+    {
+      "id": "player-1787954013776-c7cc2e",
+      "username": "sh4d katanakuro",
+      "rating": 4374,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-28T21:53:33.777Z",
+      "teamId": null,
+      "avatarUrl": "/uploads/players/player-1787954013776-c7cc2e.png?v=1787957300338"
+    },
+    {
+      "id": "player-1787954029074-55b42e",
+      "username": "vastolord",
+      "rating": 4360,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-28T21:53:49.075Z",
+      "teamId": null,
+      "avatarUrl": "/uploads/players/player-1787954029074-55b42e.png?v=1787957314819"
+    },
+    {
+      "id": "player-1787954046960-7a530e",
+      "username": "_1_861",
+      "rating": 4353,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-28T21:54:06.960Z",
+      "teamId": null,
+      "avatarUrl": null
+    },
+    {
+      "id": "player-1787954075097-76dea3",
+      "username": "PSYCHOSLAYER:|:",
+      "rating": 4346,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-28T21:54:35.098Z",
+      "teamId": null,
+      "avatarUrl": null
+    },
+    {
+      "id": "player-1787954089614-d9140c",
+      "username": "lvlvlvlvlv",
+      "rating": 4322,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-28T21:54:49.615Z",
+      "teamId": null,
+      "avatarUrl": null
+    },
+    {
+      "id": "player-1787955610815-deeb8a",
+      "username": "the Blonde Don",
+      "rating": 4320,
+      "friend": false,
+      "isProfilePlayer": false,
+      "createdAt": "2026-08-28T22:20:10.816Z",
+      "teamId": null,
+      "avatarUrl": null
+    }
+  ],
+  "teams": [
+    {
+      "id": "team-1787955926413-0a8398",
+      "name": "Zyqen X",
+      "tag": "ZYQX",
+      "logoUrl": "/uploads/teams/team-1787955926413-0a8398.png?v=1787958252352",
+      "memberIds": [
+        "player-profile",
+        "player-1787873259156-dd1c30",
+        "player-1787873259156-1d0857",
+        "player-1787873259157-8470df",
+        "player-1787873259156-b8faeb",
+        "player-1787873259156-bdc023"
+      ],
+      "createdAt": "2026-08-28T22:25:26.414Z",
+      "rankId": 9
+    },
+    {
+      "id": "team-1787956091351-6e02ee",
+      "name": "Phantom Dogs",
+      "tag": "WUF",
+      "logoUrl": "/uploads/teams/team-1787956091351-6e02ee.png?v=1787958166898",
+      "memberIds": [
+        "player-1787880460581-ff1ead",
+        "player-1787880525699-1f3947",
+        "player-1787880626103-7c9eaf",
+        "player-1787879856686-b8af8a",
+        "player-1787879807189-60da7a"
+      ],
+      "createdAt": "2026-08-28T22:28:11.351Z",
+      "rankId": 11
     }
   ]
 }

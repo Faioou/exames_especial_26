@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <circle cx="32" cy="32" r="29" fill="#111318" stroke="#E39A63" stroke-width="4"/>
+  <circle cx="32" cy="32" r="25.5" fill="#101216"/>
+  <g fill="#E39A63">
+    <!-- left laurel -->
+    <ellipse cx="18.6" cy="24" rx="2.2" ry="4.1" transform="rotate(-28 18.6 24)"/>
+    <ellipse cx="15.5" cy="29.5" rx="2.2" ry="4.1" transform="rotate(-8 15.5 29.5)"/>
+    <ellipse cx="15.9" cy="35.7" rx="2.2" ry="4.1" transform="rotate(14 15.9 35.7)"/>
+    <ellipse cx="19.2" cy="41.2" rx="2.2" ry="4.1" transform="rotate(34 19.2 41.2)"/>
+    <!-- right laurel -->
+    <ellipse cx="45.4" cy="24" rx="2.2" ry="4.1" transform="rotate(28 45.4 24)"/>
+    <ellipse cx="48.5" cy="29.5" rx="2.2" ry="4.1" transform="rotate(8 48.5 29.5)"/>
+    <ellipse cx="48.1" cy="35.7" rx="2.2" ry="4.1" transform="rotate(-14 48.1 35.7)"/>
+    <ellipse cx="44.8" cy="41.2" rx="2.2" ry="4.1" transform="rotate(-34 44.8 41.2)"/>
+    <!-- small bottom stars / marks -->
+    <rect x="23.2" y="47.7" width="5.2" height="1.8" rx="0.9" transform="rotate(18 23.2 47.7)"/>
+    <rect x="35.6" y="49.3" width="5.2" height="1.8" rx="0.9" transform="rotate(-18 35.6 49.3)"/>
+    <!-- central paper-plane / pointer -->
+    <path d="M22.4 28.3L39.8 21.7C40.8 21.3 41.7 22.2 41.3 23.2L34.8 40.5C34.3 41.8 32.4 41.7 32.1 40.3L30.8 34.5L25 33.2C23.6 32.9 23.5 31 24.8 30.5L31.2 27.9L22.4 28.3Z"/>
+  </g>
+</svg>

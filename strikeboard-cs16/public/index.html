@@ -14,11 +14,13 @@
         <span class="brand-mark">S</span>
         <span>STRIKEBOARD</span>
       </a>
-      <nav class="nav">
-        <a class="nav-item active" href="#overview"><span>◫</span> Visão geral</a>
-        <a class="nav-item" href="#matches"><span>▤</span> Partidas</a>
-        <a class="nav-item" href="#friends"><span>♟</span> Amigos</a>
-        <a class="nav-item" href="#rating"><span>⬡</span> Níveis</a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="nav-item active" href="#overview" data-view="overview"><span>◫</span> Visão geral</a>
+        <a class="nav-item" href="#matches" data-view="matches"><span>▤</span> Match History</a>
+        <a class="nav-item" href="#players" data-view="players"><span>♟</span> Jogadores</a>
+        <a class="nav-item" href="#friends" data-view="friends"><span>♡</span> Amigos</a>
+        <a class="nav-item" href="#teams" data-view="teams"><span>◈</span> Equipas</a>
+        <a class="nav-item" href="#rating" data-view="rating"><span>⬡</span> Níveis</a>
       </nav>
       <div class="sidebar-bottom">
         <span class="status-dot"></span>
@@ -32,23 +34,24 @@
         <div class="top-actions">
           <a class="btn ghost" href="/api/export">Exportar dados</a>
           <button class="btn ghost" id="openPlayerModal">+ Criar jogador</button>
+          <button class="btn ghost" id="openTeamModal">+ Criar equipa</button>
           <button class="btn primary" id="openMatchModal">+ Registar partida</button>
         </div>
       </header>
 
-      <section class="hero" id="overview">
+      <section class="hero view-section" id="overview" data-view-section="overview">
         <div class="hero-grid"></div>
         <div class="profile-row">
-          <div class="avatar" id="avatarInitial" aria-hidden="true">C</div>
+          <div class="avatar" id="avatarInitial" aria-label="Foto do perfil">C</div>
           <div class="profile-copy">
             <div class="eyebrow">PERFIL COMPETITIVO</div>
-            <div class="nickname-line"><h1 id="nickname">[ZYQX] Cuddlesoks</h1><button class="edit-name-btn" id="openProfileModal" type="button">Editar nome</button></div>
+            <div class="nickname-line"><h1 id="nickname">Cuddlesoks</h1><button class="edit-name-btn" id="openProfileModal" type="button">Editar nome</button></div>
             <div class="profile-meta"><span>🇵🇹 Portugal</span><span>•</span><span>CS 1.6</span><span>•</span><span id="matchCountMeta">0 partidas</span></div>
           </div>
-          <div class="rating-card compact" id="rating">
-            <div class="level-badge"><span id="levelNumber">3</span></div>
+          <div class="rating-card compact" id="profileRatingCard">
+            <div class="level-badge level-ring profile-rank-badge level-4" id="profileRankBadge"><span id="levelNumber">4</span></div>
             <div>
-              <div class="muted small">NÍVEL ATUAL</div>
+              <div class="muted small" id="currentRankName">LEVEL 4</div>
               <div class="rating-line"><strong id="ratingValue">1000</strong> <span>rating</span></div>
               <div class="level-progress"><div id="levelProgressBar"></div></div>
               <div class="muted tiny" id="nextLevelText"></div>
@@ -57,52 +60,80 @@
         </div>
       </section>
 
-      <section class="stats-grid" aria-label="Estatísticas">
+      <section class="stats-grid view-section" data-view-section="overview" aria-label="Estatísticas">
         <article class="stat-card"><span class="stat-label">PARTIDAS</span><strong id="statMatches">0</strong><small>total registado</small></article>
         <article class="stat-card"><span class="stat-label">VITÓRIAS</span><strong id="statWins">0</strong><small id="statWinRate">0% win rate</small></article>
         <article class="stat-card"><span class="stat-label">K / D</span><strong id="statKD">0.00</strong><small id="statKillsDeaths">0 / 0</small></article>
         <article class="stat-card"><span class="stat-label">MÉDIA KILLS</span><strong id="statAvgKills">0.0</strong><small>por partida</small></article>
       </section>
 
-      <section class="panel matches-panel" id="matches">
+      <section class="panel matches-panel overview-recent-panel view-section" data-view-section="overview" aria-label="Últimos jogos">
+        <div class="panel-head">
+          <div>
+            <div class="eyebrow">ÚLTIMOS JOGOS</div>
+            <h2>As tuas 10 partidas mais recentes</h2>
+          </div>
+          <button class="btn ghost" type="button" id="openFullMatchHistory">Ver todo o Match History</button>
+        </div>
+        <div id="recentMatchesList" class="matches-list"></div>
+      </section>
+
+      <section class="panel matches-panel view-section view-page" id="matches" data-view-section="matches" hidden>
         <div class="panel-head">
           <div>
             <div class="eyebrow">MATCH HISTORY</div>
-            <h2>Partidas registadas</h2>
+            <h2>Todas as partidas registadas</h2>
           </div>
           <span class="muted small">K/D ↓ · clica numa partida para abrir</span>
         </div>
         <div id="matchesList" class="matches-list"></div>
       </section>
 
-      <section class="lower-grid">
-        <div class="panel friends-panel" id="friends">
-          <div class="panel-head">
-            <div>
-              <div class="eyebrow">SOCIAL</div>
-              <h2>Amigos</h2>
-              <p class="muted panel-copy">Os jogadores encontrados nas partidas ficam registados automaticamente. Podes adicioná-los aos amigos e ver o rank de cada um.</p>
-            </div>
-            <button class="btn ghost" id="openPlayerModalFriends">+ Criar jogador</button>
+      <section class="panel matches-panel view-section view-page" id="players" data-view-section="players" hidden>
+        <div class="panel-head">
+          <div>
+            <div class="eyebrow">BASE DE JOGADORES</div>
+            <h2>Jogadores registados</h2>
+            <p class="muted panel-copy">Todos os jogadores da base de dados aparecem aqui. Um jogador só pode ser eliminado se nunca tiver participado numa partida registada.</p>
           </div>
-
-          <div class="rank-table-head"><span>Player</span><span>Rank</span><span></span></div>
-          <div id="friendsList" class="player-rank-list"></div>
-
-          <div class="known-head">
-            <div><div class="eyebrow">BASE DE JOGADORES</div><h3>Jogadores conhecidos</h3></div>
-            <span class="muted small" id="knownPlayersCount">0 jogadores</span>
-          </div>
-          <div id="playersList" class="known-players-list"></div>
+          <button class="btn ghost" id="openPlayerModalPlayers">+ Criar jogador</button>
         </div>
+        <div class="known-head directory-head"><span class="muted small" id="knownPlayersCount">0 jogadores</span></div>
+        <div id="playersList" class="known-players-list"></div>
+      </section>
 
-        <aside class="panel rating-panel">
-          <div class="eyebrow">SISTEMA DE RATING</div>
-          <h2>10 níveis</h2>
-          <p class="muted rating-explainer">O teu perfil mantém o sistema de <strong>10 níveis</strong>. Jogadores novos encontrados numa partida são criados automaticamente com um rating aleatório muito próximo do teu, para as equipas não parecerem desequilibradas.</p>
-          <div id="levelsList" class="levels-list"></div>
-          <div class="info-box">Tudo é guardado no teu <code>data/database.json</code>: partidas, jogadores, ranks e amigos.</div>
-        </aside>
+      <section class="panel matches-panel view-section view-page" id="friends" data-view-section="friends" hidden>
+        <div class="panel-head">
+          <div>
+            <div class="eyebrow">SOCIAL</div>
+            <h2>Amigos</h2>
+            <p class="muted panel-copy">A tua lista de amigos fica separada da base geral de jogadores para manter a página principal limpa.</p>
+          </div>
+          <button class="btn ghost" id="openPlayerModalFriends">+ Criar jogador</button>
+        </div>
+        <div class="rank-table-head"><span>Player</span><span>Rank</span><span></span></div>
+        <div id="friendsList" class="player-rank-list"></div>
+      </section>
+
+      <section class="panel teams-panel matches-panel view-section view-page" id="teams" data-view-section="teams" hidden>
+        <div class="panel-head">
+          <div>
+            <div class="eyebrow">EQUIPAS</div>
+            <h2>Equipas registadas</h2>
+            <p class="muted panel-copy">Associa jogadores livres a uma equipa. Jogadores que já pertencem a outra equipa não aparecem como disponíveis.</p>
+          </div>
+          <button class="btn ghost" id="openTeamModalSection">+ Criar equipa</button>
+        </div>
+        <div id="teamsList" class="teams-list"></div>
+      </section>
+
+      <section class="panel rating-panel matches-panel view-section view-page" id="rating" data-view-section="rating" hidden>
+        <div class="panel-head">
+          <div><div class="eyebrow">SISTEMA DE RATING</div><h2>10 níveis + 4 ranks de elite</h2></div>
+        </div>
+        <p class="muted rating-explainer">O teu perfil começa nos <strong>1000 Elo (Level 4)</strong>. Depois do Level 10 entram os ranks de elite: <strong>Sapphire, Emerald, Ruby e Diamond</strong>. Nas partidas só podes selecionar jogadores que já estejam registados na base de dados.</p>
+        <div id="levelsList" class="levels-list"></div>
+        <div class="info-box">Os dados ficam no teu <code>data/database.json</code>. As fotos recortadas ficam em <code>public/uploads</code> e a base de dados guarda a ligação a cada jogador/equipa.</div>
       </section>
     </main>
   </div>
@@ -113,8 +144,18 @@
         <div><div class="eyebrow">PERFIL</div><h2>Alterar nome</h2></div>
         <button type="button" class="icon-btn" id="closeProfileModal" aria-label="Fechar">×</button>
       </div>
-      <p class="muted profile-edit-help">Ao alterar o nome, ele também é atualizado nas partidas e scoreboards anteriores.</p>
-      <label class="field full"><span>Nome / nickname</span><input id="profileNicknameInput" name="nickname" maxlength="48" required /></label>
+      <p class="muted profile-edit-help">Se pertenceres a uma equipa, o prefixo <strong id="profileTeamPrefixHint"></strong> é aplicado automaticamente e não pode ser removido ao editar o nome.</p>
+      <div class="photo-editor-row">
+        <div class="photo-preview profile-photo-preview" id="profilePhotoPreview">C</div>
+        <div class="photo-actions">
+          <button type="button" class="btn ghost small-btn" id="chooseProfilePhoto">Escolher foto</button>
+          <button type="button" class="mini-btn danger" id="removeProfilePhoto">Remover foto</button>
+          <input type="file" id="profilePhotoInput" accept="image/png,image/jpeg,image/webp" hidden />
+          <input type="hidden" id="profileAvatarData" />
+          <input type="hidden" id="profileRemoveAvatar" value="false" />
+        </div>
+      </div>
+      <label class="field full"><span>Nome / nickname (sem prefixo)</span><input id="profileNicknameInput" name="nickname" maxlength="48" required /></label>
       <div id="profileMessage" class="form-message" aria-live="polite"></div>
       <div class="modal-actions"><button type="button" class="btn ghost" id="cancelProfileEdit">Cancelar</button><button class="btn primary" type="submit">Guardar nome</button></div>
     </form>
@@ -127,14 +168,26 @@
         <button type="button" class="icon-btn" id="closePlayerModal" aria-label="Fechar">×</button>
       </div>
       <input type="hidden" id="playerIdInput" />
+      <input type="hidden" id="playerAvatarData" />
+      <input type="hidden" id="playerRemoveAvatar" value="false" />
+      <div class="photo-editor-row player-photo-row">
+        <div class="photo-preview" id="playerPhotoPreview">?</div>
+        <div class="photo-actions">
+          <button type="button" class="btn ghost small-btn" id="choosePlayerPhoto">Escolher foto</button>
+          <button type="button" class="mini-btn danger" id="removePlayerPhoto">Remover foto</button>
+          <span class="muted tiny">Ajusta a posição e o zoom antes de confirmar.</span>
+          <input type="file" id="playerPhotoInput" accept="image/png,image/jpeg,image/webp" hidden />
+        </div>
+      </div>
       <div class="form-grid">
         <label class="field full"><span>Username</span><input id="playerUsernameInput" maxlength="48" placeholder="Ex.: shr1mpyy" required /></label>
-        <label class="field full"><span>Rating</span><input id="playerRatingInput" type="number" min="0" max="9999" step="1" placeholder="1000" required /></label>
-        <div class="rank-preview full"><span class="level-ring" id="playerLevelPreview">3</span><div><b id="playerRatingPreview">1000</b><span>rating · nível calculado automaticamente</span></div></div>
+        <label class="field full"><span>Rating</span><input id="playerRatingInput" type="number" min="100" step="1" placeholder="1000" required /></label>
+        <label class="field full"><span>Equipa</span><select id="playerTeamInput"><option value="">Sem equipa</option></select><small class="field-help" id="playerTeamHelp">Podes associar o jogador diretamente a uma equipa existente.</small></label>
+        <div class="rank-preview full"><span class="level-ring" id="playerLevelPreview">4</span><div><b id="playerRatingPreview">1000</b><span id="playerRankNamePreview">Level 4 · calculado automaticamente</span></div></div>
         <label class="friend-check full"><input id="playerFriendInput" type="checkbox" /><span>Adicionar aos meus amigos</span></label>
       </div>
       <div id="playerMessage" class="form-message" aria-live="polite"></div>
-      <div class="modal-actions"><button type="button" class="btn ghost" id="cancelPlayerEdit">Cancelar</button><button class="btn primary" type="submit" id="savePlayerButton">Criar jogador</button></div>
+      <div class="modal-actions split-actions"><button type="button" class="btn ghost danger-outline" id="deletePlayerButton" hidden>Eliminar jogador</button><span class="modal-actions-spacer"></span><button type="button" class="btn ghost" id="cancelPlayerEdit">Cancelar</button><button class="btn primary" type="submit" id="savePlayerButton">Criar jogador</button></div>
     </form>
   </dialog>
 
@@ -144,7 +197,7 @@
         <div>
           <div class="eyebrow">NOVA PARTIDA</div>
           <h2>Registar os 10 jogadores</h2>
-          <p class="muted modal-subtitle">Se um username já existir, a partida fica ligada à conta existente. Se não existir, o STRIKEBOARD cria a conta automaticamente com um rank próximo do teu.</p>
+          <p class="muted modal-subtitle">Só podes selecionar jogadores já existentes na base de dados. Escreve o nome e escolhe uma das sugestões para confirmar cada jogador.</p>
         </div>
         <button type="button" class="icon-btn" id="closeMatchModal" aria-label="Fechar">×</button>
       </div>
@@ -167,20 +220,20 @@
         <label class="field score-field"><span>Adversário</span><input name="opponentScore" type="number" min="0" max="99" placeholder="8" required /></label>
       </div>
 
-      <div class="team-names-grid">
-        <label class="field"><span>Nome da tua equipa</span><input name="ourTeamName" id="ourTeamName" maxlength="40" value="ZYQX" required /></label>
-        <label class="field"><span>Nome da equipa adversária</span><input name="opponentTeamName" id="opponentTeamName" maxlength="40" value="ENEMY" required /></label>
+      <div class="auto-team-info">
+        <div><span class="team-kicker">NOME AUTOMÁTICO</span><b id="ourAutoTeamName">Será determinado pelos 5 jogadores</b></div>
+        <div><span class="team-kicker">NOME AUTOMÁTICO</span><b id="opponentAutoTeamName">Será determinado pelos 5 jogadores</b></div>
       </div>
 
       <div class="team-entry-grid">
         <section class="team-entry-card our-team-card">
-          <div class="team-entry-head"><div><span class="team-kicker">A TUA EQUIPA</span><h3 id="ourTeamPreview">ZYQX</h3></div><span class="team-count">5 jogadores</span></div>
+          <div class="team-entry-head"><div><span class="team-kicker">A TUA EQUIPA</span><h3 id="ourTeamPreview">Equipa automática</h3></div><span class="team-count">5 jogadores</span></div>
           <div class="player-table-head our-player-grid"><span>EU</span><span>JOGADOR</span><span>KILLS</span><span>DEATHS</span></div>
           <div id="ourPlayersRows" class="player-rows"></div>
         </section>
 
         <section class="team-entry-card enemy-team-card">
-          <div class="team-entry-head"><div><span class="team-kicker">ADVERSÁRIOS</span><h3 id="opponentTeamPreview">ENEMY</h3></div><span class="team-count">5 jogadores</span></div>
+          <div class="team-entry-head"><div><span class="team-kicker">ADVERSÁRIOS</span><h3 id="opponentTeamPreview">Equipa automática</h3></div><span class="team-count">5 jogadores</span></div>
           <div class="player-table-head enemy-player-grid"><span>JOGADOR</span><span>KILLS</span><span>DEATHS</span></div>
           <div id="enemyPlayersRows" class="player-rows"></div>
         </section>
@@ -190,6 +243,62 @@
       <div id="formMessage" class="form-message" aria-live="polite"></div>
       <div class="modal-actions"><button type="button" class="btn ghost" id="cancelMatch">Cancelar</button><button class="btn primary" type="submit">Guardar partida</button></div>
     </form>
+  </dialog>
+
+  <dialog id="teamModal" class="modal team-modal">
+    <form id="teamForm" class="modal-card">
+      <div class="modal-head">
+        <div><div class="eyebrow">EQUIPA</div><h2 id="teamModalTitle">Criar equipa</h2></div>
+        <button type="button" class="icon-btn" id="closeTeamModal" aria-label="Fechar">×</button>
+      </div>
+      <input type="hidden" id="teamIdInput" />
+      <input type="hidden" id="teamLogoData" />
+      <input type="hidden" id="teamRemoveLogo" value="false" />
+      <input type="hidden" id="teamRankInput" value="0" />
+      <div class="photo-editor-row">
+        <div class="photo-preview team-photo-preview" id="teamPhotoPreview">T</div>
+        <div class="photo-actions">
+          <button type="button" class="btn ghost small-btn" id="chooseTeamPhoto">Escolher logo/foto</button>
+          <button type="button" class="mini-btn danger" id="removeTeamPhoto">Remover foto</button>
+          <span class="muted tiny">A foto é recortada num círculo e pode ser reposicionada.</span>
+          <input type="file" id="teamPhotoInput" accept="image/png,image/jpeg,image/webp" hidden />
+        </div>
+      </div>
+      <div class="form-grid">
+        <label class="field"><span>Nome da equipa</span><input id="teamNameInput" maxlength="40" placeholder="Zyqen X" required /></label>
+        <label class="field"><span>Sigla</span><input id="teamTagInput" maxlength="8" placeholder="ZYQX" required /></label>
+        <div class="field full">
+          <span>Rank competitivo da equipa</span>
+          <div id="teamRankPicker" class="team-rank-picker" aria-label="Rank competitivo da equipa"></div>
+          <small class="muted tiny">Ranks disponíveis: None + os 18 ranks competitivos, de Silver I até The Global Elite.</small>
+        </div>
+        <div class="field full">
+          <span>Jogadores da equipa</span>
+          <div id="teamMembersList" class="team-members-picker"></div>
+        </div>
+      </div>
+      <div id="teamMessage" class="form-message" aria-live="polite"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn ghost" id="deleteTeamButton" hidden>Eliminar equipa</button>
+        <button type="button" class="btn ghost" id="cancelTeamEdit">Cancelar</button>
+        <button class="btn primary" type="submit" id="saveTeamButton">Criar equipa</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="cropModal" class="modal crop-modal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div><div class="eyebrow">AJUSTAR FOTO</div><h2>Posicionar imagem</h2></div>
+        <button type="button" class="icon-btn" id="closeCropModal" aria-label="Fechar">×</button>
+      </div>
+      <p class="muted crop-help">Arrasta a imagem dentro do círculo e usa o zoom até ficar como queres.</p>
+      <div class="crop-stage-wrap">
+        <canvas id="cropCanvas" width="320" height="320" class="crop-canvas"></canvas>
+      </div>
+      <label class="zoom-control"><span>Zoom</span><input type="range" id="cropZoom" min="1" max="3" step="0.01" value="1" /></label>
+      <div class="modal-actions"><button type="button" class="btn ghost" id="cancelCrop">Cancelar</button><button type="button" class="btn primary" id="confirmCrop">Usar esta posição</button></div>
+    </div>
   </dialog>
 
   <dialog id="detailsModal" class="modal wide">

@@ -216,7 +216,7 @@
       "isProfilePlayer": true,
       "createdAt": "2026-08-27T23:27:39.155Z",
       "teamId": "team-1787955926413-0a8398",
-      "avatarUrl": "/uploads/players/player-profile.png?v=1787958629280"
+      "avatarUrl": "/uploads/players/player-profile.png?v=1787959893118"
     },
     {
       "id": "player-1787873259156-bdc023",
@@ -226,7 +226,7 @@
       "isProfilePlayer": false,
       "createdAt": "2026-08-27T23:27:39.156Z",
       "teamId": "team-1787955926413-0a8398",
-      "avatarUrl": "/uploads/players/player-1787873259156-bdc023.png?v=1787958555546"
+      "avatarUrl": "/uploads/players/player-1787873259156-bdc023.png?v=1787960081702"
     },
     {
       "id": "player-1787873259156-b8faeb",
@@ -236,7 +236,7 @@
       "isProfilePlayer": false,
       "createdAt": "2026-08-27T23:27:39.156Z",
       "teamId": "team-1787955926413-0a8398",
-      "avatarUrl": "/uploads/players/player-1787873259156-b8faeb.png?v=1787958543927"
+      "avatarUrl": "/uploads/players/player-1787873259156-b8faeb.png?v=1787959788333"
     },
     {
       "id": "player-1787873259156-dd1c30",
@@ -256,7 +256,7 @@
       "isProfilePlayer": false,
       "createdAt": "2026-08-27T23:27:39.156Z",
       "teamId": "team-1787955926413-0a8398",
-      "avatarUrl": "/uploads/players/player-1787873259156-1d0857.png?v=1787958549993"
+      "avatarUrl": "/uploads/players/player-1787873259156-1d0857.png?v=1787960097370"
     },
     {
       "id": "player-1787873259156-3e3f6e",
@@ -549,7 +549,7 @@
         "player-1787879807189-60da7a"
       ],
       "createdAt": "2026-08-28T22:28:11.351Z",
-      "rankId": 11
+      "rankId": 9
     }
   ]
 }
